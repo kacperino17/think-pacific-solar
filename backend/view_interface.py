@@ -59,6 +59,6 @@ def aqi_to_recommendation(aqi):
     else:
         return "🔴 Poor air quality – expect reduced efficiency."
 
-st.subheader("🔮 Solar Efficiency Forecast")
+st.subheader("Solar Efficiency Forecast")
 for ts, val in predicted_df['Predicted AQI'].items():
     st.markdown(f"**{ts.strftime('%Y-%m-%d %H:%M')}** — AQI: `{int(val)}` → {aqi_to_recommendation(val)}")
