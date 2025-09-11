@@ -4,16 +4,13 @@ from weather import apply_weather_modifier
 import sqlite3
 
 weather_data = {
-    "2025-07-28 06:00": {"wind_speed": 0.5, "humidity": 85, "rainfall": 0, "pressure": 1022},
-    "2025-07-28 07:00": {"wind_speed": 3.2, "humidity": 60, "rainfall": 1.0, "pressure": 1010},
-    "2025-07-28 08:00": {"wind_speed": 6.1, "humidity": 75, "rainfall": 0, "pressure": 1025},
-    "2025-07-28 09:00": {"wind_speed": 1.2, "humidity": 88, "rainfall": 0.5, "pressure": 1028},
-    "2025-07-28 10:00": {"wind_speed": 4.5, "humidity": 70, "rainfall": 0, "pressure": 1015},
-    "2025-07-28 11:00": {"wind_speed": 0.9, "humidity": 90, "rainfall": 0, "pressure": 1030},
+    #PLEASE INSERT DATA INTO HERE
+    #Either LIVE API KEY FOR DATA COLLECTION
+    #OR sample data
 }
 
 def apply_modifiers():
-    conn = sqlite3.connect("backend/aircast.db")
+    conn = sqlite3.connect("aircast.db")
     cursor = conn.cursor()
 
     for timestamp, weather in weather_data.items():

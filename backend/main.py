@@ -15,7 +15,7 @@ def process_hourly_data(timestamp, pollutants):
     total_aqi = max(filter(None, aqi_data.values()))
 
     # Store in DB
-    conn = sqlite3.connect("backend/aircast.db")
+    conn = sqlite3.connect("aircast.db")
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -49,12 +49,10 @@ def process_hourly_data(timestamp, pollutants):
 def insert_sample_data():
     from datetime import datetime
     samples = [
-        ("2025-07-28 06:00", {"pm25": 55, "pm10": 100, "co": 7.1, "o3": 0.068, "no2": 120, "so2": 45}),
-        ("2025-07-28 07:00", {"pm25": 35, "pm10": 70, "co": 6.5, "o3": 0.058, "no2": 80, "so2": 30}),
-        ("2025-07-28 08:00", {"pm25": 28, "pm10": 65, "co": 5.2, "o3": 0.050, "no2": 65, "so2": 28}),
-        ("2025-07-28 09:00", {"pm25": 22, "pm10": 55, "co": 4.8, "o3": 0.045, "no2": 50, "so2": 25}),
-        ("2025-07-28 10:00", {"pm25": 48, "pm10": 90, "co": 5.5, "o3": 0.062, "no2": 110, "so2": 38}),
-        ("2025-07-28 11:00", {"pm25": 75, "pm10": 120, "co": 7.8, "o3": 0.071, "no2": 160, "so2": 50}),
+    #PLEASE INSERT DATA INTO HERE
+    #Either LIVE API KEY FOR DATA COLLECTION
+    #OR sample data
+
     ]
     for timestamp, data in samples:
         process_hourly_data(timestamp, data)

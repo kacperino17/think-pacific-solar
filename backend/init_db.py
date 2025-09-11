@@ -3,7 +3,7 @@
 import sqlite3
 
 def create_tables():
-    conn = sqlite3.connect("backend/aircast.db")
+    conn = sqlite3.connect("aircast.db")
     cursor = conn.cursor()
 
     # Table 1: Raw pollutant data and AQI
@@ -27,7 +27,7 @@ def create_tables():
         );
     """)
 
-    # Table 2: Final hourly AQI with weather modifiers
+    # Table 2: Final hourly AQI with weather modifiers + Can include traffic within this section as well. 
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS month_01_database (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

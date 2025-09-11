@@ -32,7 +32,7 @@ st.header("📈 AQI Forecast (Adjusted for Solar Planning)")
 
 # Load adjusted AQI time series
 df = get_adjusted_aqi_series()
-last_6_actual = df.tail(6)
+last_6_actual = df.tail(168)
 forecast = forecast_aqi_arima(last_6_actual['adjusted_aqi'])
 
 # Create future timestamps
